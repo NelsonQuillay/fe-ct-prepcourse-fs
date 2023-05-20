@@ -12,6 +12,9 @@ function mayuscula(nombre) {
 
    return nombre.charAt(0).toUpperCase() + nombre.slice(1) 
 }
+ // var nomb = nombre.split('');
+ // nomb[0]=nomb[0].toUpperCase();
+ // return nomb.join('');
 
 function invocarCallback(cb) {
    // Invoca/ejecuta el callback `cb`.
@@ -35,14 +38,14 @@ function sumarArray(arrayOfNumbers, cb) {
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
 
-   // var resultado = 0;
+   // var res = 0;
 
    // for (let i = 0; i < arrayOfNumbers.length; i++) {
-   //    resultado = resultado + arrayOfNumbers[i];
+   //    res += arrayOfNumbers[i];
    // }
    // cb (resultado);
 
-   cb (arrayOfNumbers.reduce ((resultado, i) =>  resultado + i , 0));
+   cb (arrayOfNumbers.reduce ((i, res) =>  i + res , 0));
 }
 
 function forEach(array, cb) {
@@ -65,9 +68,11 @@ function map(array, cb) {
    // Retorna el nuevo arreglo.
    // Tu código:
 
+
+
    var newArray=array.map(elemt => cb (elemt));
    return newArray
-   //return array.map(elemt => cb (elemt));
+   //return array.map(elemt => cb  (elemt));
 }
 
 function filter(arrayOfStrings) {
@@ -75,10 +80,17 @@ function filter(arrayOfStrings) {
    // Luego retorna un nuevo arreglo con estos elementos.
    // Tu código:
   
-   var newarray = arrayOfStrings.filter (elemt => (elemt[0]==="a"));
-     return newarray;
-   //var newarray = arrayOfStrings.filter (elemt => (elemt.chatAt(0)==="a"));
-   //var newarray = arrayOfStrings.filter (elemt => (elemt.starWith('a'));
+   //var res = [];
+  // for (let i = 0; i < arrayOfStrings.length; i++) {
+   //  if (arrayOfStrings[i][0]==='a') {
+   //   res.push(arrayOfStrings[i]);
+   //  }
+  // }
+
+   var rea= arrayOfStrings.filter (elemt => (elemt[0]==="a"));
+     return res;
+   //var res = arrayOfStrings.filter (elemt => (elemt.chatAt(0)==="a"));
+   //var res = arrayOfStrings.filter (elemt => (elemt.starWith('a'));
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/

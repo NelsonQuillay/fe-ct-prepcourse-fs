@@ -4,12 +4,14 @@ function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
    // Tu código:
       return array.shift ();
+   // return array [0]
 }
 
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
        return array.pop ();
+   //return array[array.length -1]
 }
 
 function obtenerLargoDelArray(array) {
@@ -23,6 +25,16 @@ function incrementarPorUno(array) {
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
       return array.map(elemento => elemento+1);  
+   
+   // var nuevoArreglo = [];
+   // for (let i= 0; i < array.length; i++) {
+   //    array [i]++;
+   //       o
+   //    nuevoArray.push(array[i]+1);
+   //                   (++array[i])
+   //}
+   //return nuevoArreglo
+   //
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -47,7 +59,7 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
-   return palabras.join (" ");
+   return palabras.join (" "); //(",") te separa el string mediante comas
    
 }
 
@@ -55,6 +67,10 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
+  //for (let =0 ; array.length; i++){
+   // if (array[i]===elemento) return true {
+  //} retur false;
+  
    return array.includes (elemento);
    //if (array.includes(elemento)) return true;
    //retutn false;
@@ -71,7 +87,7 @@ function agregarNumeros(arrayOfNums) {
       return resultado;
    //var resultado = arrayOfNums.reduce(
       //(acumulador, elemento) => acumulador + elemento, 0 )
-   // return resultado;             
+   // return resultado;              
 }
 
 function promedioResultadosTest(resultadosTest) {
@@ -129,6 +145,7 @@ function multiplicarArgumentos() {
       return resultado; 
    }
 }
+//return 
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.

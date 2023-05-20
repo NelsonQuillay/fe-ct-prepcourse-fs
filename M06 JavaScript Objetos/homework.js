@@ -59,16 +59,17 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
    // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
    // Debes multiplicar este número por 5 y retornar el resultado.
    // Tu código:
-
-   //se puede utilizar el dot-notation o bracket-notation
-   //return objetoMisterioso.numeroMisterioso * 5;   
-   return objetoMisterioso['numeroMisterioso']*5;
+   //se puede utilizar el dot-notation porque sabemos exactamente como se llama la propiedad
+   var res = objetoMisterioso.numeroMisterioso * 5; 
+   return res;
+      //return objetoMisterioso.numeroMisterioso * 5; 
 }
 
 function eliminarPropiedad(objeto, propiedad) {
    // El parámetro "propiedad" es una propiedad del objeto que recibes.
    // Debes eliminarla del objeto y retornarlo finalmente.
    // Tu código:
+   //if (objeto.hasOwnProperty(propiedad)) -> este if consulta al objeto si tiene esa propiedad 
    delete objeto[propiedad];
    return objeto;
 }
@@ -77,14 +78,12 @@ function tieneEmail(objetoUsuario) {
    // Verifica si el "objetoUsuario", en su propiedad "email", posee un valor definido.
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   //podemos usar bracket con comillas porque conocemos el nombre de la propiedad
-   if (objetoUsuario ['email'] )  {
-      return true;
-   } else{
+   //Para usar bracket hay que mencionar la propiedad con comillas porque conocemos el nombre de la propiedad 
+  //if (objetoUsuario ['email']) {return true} 
+  //     else { return false}
+   //o mas simple don-notation -> es igual (objetoUsuario.email === true)
+    if (objetoUsuario.email) return true;
       return false;
-   }
-   // if (objetoUsuario.email) return true;
-   //retuen false;
 }
 
 function tienePropiedad(objeto, propiedad) {
@@ -92,22 +91,22 @@ function tienePropiedad(objeto, propiedad) {
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
    
-   //Se recomienda usar hasOwnPropiedad para verificar si un objeto tiene una propiedad en particular
+   //Se recomienda usar hasOwnProperty para verificar si un objeto tiene una propiedad en particular
 
-   // if (objeto.hasOwnPropiedad(propiedad)) return true;
+   // if (objeto.hasOwnProperty(propiedad)) return true;
    //return false;
   
-   //return objeto.hasOwnPropiedad(propiedad)
+   return objeto.hasOwnProperty(propiedad) //hasOwnProperty devuelvo un booleano true o false
    
-   if (objeto[propiedad]) return true;
-   return false;
+   //if (objeto[propiedad]) return true;
+   //return false;
 }
 
 function verificarPassword(objetoUsuario, password) {
    // Verifica si la propiedad "password" del "objetoUsuario" coincide con el parámetro "password".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   if (objetoUsuario ['password']  === password) return true;
+   if (objetoUsuario.password  === password) return true;
    return false;
 
    //return objetoUsuario.password===password
@@ -141,7 +140,7 @@ function pasarUsuarioAPremium(objetoMuchosUsuarios) {
    // for (let i = 0; i <objetoMuchosUsuarios.length; i++) {
    // objetoMuchosUsuarios [i].esPremium = true;     
    
-   objetoMuchosUsuarios.forEach(Element => {Element.esPremium= true;});
+   objetoMuchosUsuarios.forEach( E => {E.esPremium= true;});
      return objetoMuchosUsuarios
 }
 
@@ -158,6 +157,8 @@ function sumarLikesDeUsuario(objetoUsuario) {
       suma = suma + objetoUsuario.posts[i].likes;
    }
    return suma;
+   // var res =0;
+   //objetoUsuario.posts.forEach((post)=>(res+=post.likes));
 }
 
 function agregarMetodoCalculoDescuento(objetoProducto) {
@@ -173,6 +174,7 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    // Tu código:
    
    objetoProducto.calcularPrecioDescuento = function () {
+   // return objetoProducto.precio -  objetoProducto.precio * objetoProducto.porcentajeDeDescuento;
       return this.precio - (this.precio * this.porcentajeDeDescuento);
    }
    return objetoProducto;

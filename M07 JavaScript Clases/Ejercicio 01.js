@@ -24,6 +24,17 @@ function crearUsuario() {
    }
    var nombre = new Usuario (nombre);
    return Usuario
+   
+   //function Usuario (usuario, nombre, email, password) {
+   //   this.usuario = usuario;
+   //   this.nombre = nombre;
+   //   this.email = email;
+   //   this.password = password;
+   //   this.saludar = function () {
+   //      return 'Hola, mi nombre es '+this.nombre;
+  //    }
+  // }
+  // return Usuario
 }
 
 function agregarMetodoPrototype(Usuario) {
@@ -40,11 +51,12 @@ function agregarStringInvertida() {
    // El método debe llamarse "reverse".
    // [PISTA]: necesitarás utilizar el objeto "this".
    String.prototype.reverse = function () {
-      var separar = this.split ('');
-      var invertida = separar.reverse ();
-      var terminada = invertida.join ('');
-      return terminada;
-      };
+       // var separar = this.split ('');
+      //  var invertida = separar.reverse ();
+      //  var terminada = invertida.join ('');
+        //  return terminada;
+    return this.split ('').reverse().join ('');
+      }
    }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
